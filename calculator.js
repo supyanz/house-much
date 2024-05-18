@@ -38,12 +38,12 @@ function calculate() {
     const remainingCashFlow = personATakeHomePay + personBTakeHomePay - cashTopUpNeeded;
 
     // Output
-    document.getElementById('monthlyRepayment').innerText = monthlyRepayment.toFixed(2);
-    document.getElementById('downpayment').innerText = downpayment.toFixed(2);
-    document.getElementById('cpfForDownpayment').innerText = cpfForDownpayment.toFixed(2);
-    document.getElementById('cashForDownpayment').innerText = cashForDownpayment.toFixed(2);
-    document.getElementById('cashTopUp').innerText = (cashTopUpNeeded > 0) ? `Needs cash top up of $${cashTopUpNeeded.toFixed(2)} monthly` : 'Monthly payment is fully covered by CPF contribution';
-    document.getElementById('remainingCashFlow').innerText = remainingCashFlow.toFixed(2);
+    document.getElementById('monthlyRepayment').innerText = "$" + monthlyRepayment.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('downpayment').innerText = "$" + downpayment.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('cpfForDownpayment').innerText = "$" + cpfForDownpayment.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('cashForDownpayment').innerText = "$" + cashForDownpayment.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('cashTopUp').innerText = (cashTopUpNeeded > 0) ? `Needs cash top up of $${cashTopUpNeeded.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} monthly` : 'Monthly payment is fully covered by CPF contribution';
+    document.getElementById('remainingCashFlow').innerText = "$" + remainingCashFlow.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 function calculateMonthlyRepayment(interestRate, loanAmount, loanTenure) {

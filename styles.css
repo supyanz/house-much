@@ -17,12 +17,17 @@ h1 {
     padding-bottom: 20px;
       }
       
-
+h2 {
+    font-size: 40px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding-top: 0;
+}
 
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     margin: 20px auto;
     width: 90%;
     max-width: 1200px;
@@ -50,6 +55,15 @@ h1 {
     background-color: #50727B;
     color: #ffffff;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove default spinner controls */
+    appearance: none;
+}
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox-specific property to remove spinner controls */
+}
+
 
 #mortgageForm button {
     padding: 10px 20px;
@@ -58,6 +72,9 @@ h1 {
     background-color: #78A083;
     color: #ffffff;
     cursor: pointer;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size:20px;
 }
 
 #mortgageForm button:hover {
@@ -70,6 +87,10 @@ h1 {
     font-size:40px;
     color:#a3c8ad;
 
+}
+
+#sliderInstruction{
+    font-size:small;
 }
 .col-xs-12 {
     width: 100%;
@@ -111,7 +132,7 @@ h1 {
     overflow: hidden;
     pointer-events: none;
     background: #ccc;
-    
+    z-index: 1;
 }
 
 .pg-slider__progress {
@@ -125,12 +146,14 @@ h1 {
     
 }
 .pg-slider__thumb {
+    position:relative;
     appearance: none;
     width: 100%;
     height: 6px;
     background: transparent;
     cursor: pointer;
     outline: none; /* Remove outline for better appearance */
+    z-index: 2;
 }
 
 .pg-slider__thumb::-webkit-slider-thumb {
@@ -141,7 +164,7 @@ h1 {
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #50727B;
-    margin-top: -3px; /* Align thumb with track */
+    /* margin-top: -3px; Align thumb with track */
 }
 
 .pg-slider__thumb::-moz-range-thumb {
@@ -151,7 +174,54 @@ h1 {
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #50727B;
-    margin-top: -3px; /* Align thumb with track */
+    /* margin-top: -3px; Align thumb with track */
+}
+.mortgageContainer {
+    max-width: 100%; /* Set a maximum width for the container */
+    margin-left: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    /* text-align: right; Right-align the content inside the container */
+}
+
+.mortgageItem {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.mortgageField {
+    flex: 0 0 calc(50% - 10px); /* Each field takes 50% of the container width with a gap of 20px */
+    margin-right: 20px; /* Adds a gap of 20px between items */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.mortgageField:last-child {
+    margin-right: 0;
+}
+
+.horizontal-line {
+    border: none;
+    border-top: solid;
+    border-color:#a3c8ad;
+    border-width: 5px;
+}
+
+.personContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.personItem {
+    width: calc(50% - 10px); /* Two columns, each taking 50% of the container width with a gap of 20px */
+    margin-right: 20px; /* Adds a gap of 5px between items */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* To remove the margin from the last item */
+.personItem:last-child {
+    margin-right: 0;
 }
 
 
@@ -170,6 +240,13 @@ h1 {
 .calculation-results span {
     font-weight: bold;
     color: #78A083;
+    font-size: 40px;
+}
+
+#cashTopUp{
+    font-style: italic;
+    font-weight: lighter;
+    color:#a0dbc6;
 }
 
 @media only screen and (max-width: 600px) {

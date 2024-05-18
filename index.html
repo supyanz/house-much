@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mortgage Calculator</title>
+    <title>Calculate SG house affordability</title>
+    <link rel="icon" type="image/x-icon" href="./Assets/favicon-16x16.png">
     <link rel="stylesheet" href="styles.css">
     <script src="calculator.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,54 +17,72 @@
         <form id="mortgageForm">
             <label for="propertyValue">Property Value ($): <br/> <div class="propertyValueDisplay"><span id="propertyValueDisplay">0</span></div></label>
             <div class="col-xs-12 propertyValue__slider">
-                <div class="propertyValue__fine-tune propertyValue--colorized">Slide to adjust your property price</div>
+                <div class="propertyValue__fine-tune propertyValue--colorized" id="sliderInstruction">Slide to adjust your property price</div>
                 <span class="popover-toggle propertyValue__slider-wrapper" data-testid="popover">
                     <div class="pg-slider">
                         <div class="pg-slider__before">S$ 0</div>
                         <div class="pg-slider__track">
                             <div class="pg-slider__progress" id="sliderProgress"></div>
                         </div>
-                        <input class="pg-slider__thumb" type="range" min="0" max="5000000" step="10000" tabindex="0" value="0" id="propertyValueSlider">
-                        <div class="pg-slider__after">S$ 5,000,000</div>
+                        <input class="pg-slider__thumb" type="range" min="0" max="3000000" step="10000" tabindex="0" value="0" id="propertyValueSlider">
+                        <div class="pg-slider__after">S$ 3,000,000</div>
                     </div>
                     
                 </span>
                 
             </div>
+            <div class="mortgageContainer">
+                <div class="mortgageItem">
+                    <div class="mortgageField"><label for="loanPercentage">Loan % of Property Value:</label>
+                    </div>
+                    <div class="mortgageField"><input type="number" id="loanPercentage" required><br></div>
+                </div>
+                <div class="mortgageItem">
+
+                    <div class="mortgageField"><label for="interestRate">Mortgage Interest Rate (%):</label></div>
+                    <div class="mortgageField"><input type="number" id="interestRate" step="0.01" required><br></div>
+                </div>
+
+                <div class="mortgageItem">
+
+                    <div class="mortgageField"><label for="loanTenure">Loan Tenure (years):</label></div>
+                    <div class="mortgageField"><input type="number" id="loanTenure" required><br></div>
+                </div>
+            </div>
+            <!-- <hr class="horizontal-line"> -->
+            <div class="personContainer">
+                <div class="personItem"><label for="personAIncome">Person A Monthly Income ($):</label>
+                    <input type="number" id="personAIncome" required><br>
+                </div>
+                <div class="personItem"><label for="personBIncome">Person B Monthly Income ($):</label>
+                    <input type="number" id="personBIncome" required><br>
+                </div>
+
+            </div>
+            <div class="personContainer">
+                <div class="personItem"><label for="personAOABalance">Person A Current OA Balance ($):</label><input type="number" id="personAOABalance" required><br></div>
             
-            <label for="loanPercentage">Loan Amount (as % of Property Value):</label>
-            <input type="number" id="loanPercentage" required><br>
-            
-            <label for="interestRate">Mortgage Interest Rate (%):</label>
-            <input type="number" id="interestRate" required><br>
-            
-            <label for="loanTenure">Loan Tenure (years):</label>
-            <input type="number" id="loanTenure" required><br>
-            
-            <label for="personAIncome">Person A Monthly Income ($):</label>
-            <input type="number" id="personAIncome" required><br>
-            
-            <label for="personBIncome">Person B Monthly Income ($):</label>
-            <input type="number" id="personBIncome" required><br>
-            
-            <label for="personAOABalance">Person A Current OA Balance ($):</label>
-            <input type="number" id="personAOABalance" required><br>
-            
-            <label for="personBOABalance">Person B Current OA Balance ($):</label>
-            <input type="number" id="personBOABalance" required><br>
-            
+                <div class="personItem"><label for="personBOABalance">Person B Current OA Balance ($):</label>
+                <input type="number" id="personBOABalance" required><br></div>
+            </div>
             <button type="button" onclick="calculate()">Calculate</button>
         </form>
         
         <div class="calculation-results">
-            <h3>Calculation Results</h3>
-            <p>Downpayment Required: <span id="downpayment"></span></p>
-            <p>CPF to be Used for Downpayment: <span id="cpfForDownpayment"></span></p>
-            <p>Cash Required for Downpayment: <span id="cashForDownpayment"></span></p>
+            <h2>Here are your results 👻</h2>
+            <p>Downpayment Required: </br>
+                <span id="downpayment">$0</span></p>
+            <p>CPF to be Used for Downpayment: </br>
+                <span id="cpfForDownpayment">$0</span></p>
+            <p>Cash Required for Downpayment: </br>
+                <span id="cashForDownpayment">$0</span></p>
+            <p>Monthly Repayment Amount: </br>
+                <span id="monthlyRepayment">$0</span></p>
             <p id="cashTopUp"></p>
-            <p>Monthly Repayment Amount: <span id="monthlyRepayment"></span></p>
-            <p>Remaining Cash after Repayment: <span id="remainingCashFlow"></span></p>
+            <p>Remaining Cash after Repayment: </br>
+                <span id="remainingCashFlow">$0</span></p>
         </div>
+        
     </div>
 
     <!-- Include the slider.js file -->
