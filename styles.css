@@ -268,7 +268,15 @@ input[type="number"] {
     }
 
     .footer {
-        display: block;
+        background-color: #344955;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        position: block;
+        bottom: 0;
+        font-size: 10px;
     }
 }
 /* Style for the burger menu */
@@ -372,7 +380,7 @@ body {
 }
 
 /* Footer styles */
-.footer {
+/* .footer {
     background-color: #344955;
     color: white;
     text-align: center;
@@ -382,6 +390,20 @@ body {
     position: absolute;
     bottom: 0;
     font-size: 10px;
+} */
+
+@media only screen and (min-width: 601px) {
+    .footer {
+        background-color: #344955;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        font-size: 10px;
+    }
 }
 
 
