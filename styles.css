@@ -256,12 +256,6 @@ input[type="number"] {
     color:#a0dbc6;
 }
 
-@media only screen and (max-width: 600px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
     #mortgageForm, .calculation-results {
         width: 90%;
         margin-bottom: 20px;
@@ -278,7 +272,7 @@ input[type="number"] {
         bottom: 0;
         font-size: 10px;
     }
-}
+
 /* Style for the burger menu */
 .navbar {
     position: absolute;
@@ -430,7 +424,18 @@ body {
         font-size: 10px;
     }
 }
-
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .overlay h1 {
+        font-size:35px
+    }
+    .aboutContent button {
+        margin-bottom: 5px;
+    }
+}
 
 /*STYLES for ASSUMPTIONS PAGE*/
 .assumptionsContent {
