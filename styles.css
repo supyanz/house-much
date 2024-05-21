@@ -266,6 +266,10 @@ input[type="number"] {
         width: 90%;
         margin-bottom: 20px;
     }
+
+    .footer {
+        display: block;
+    }
 }
 /* Style for the burger menu */
 .navbar {
