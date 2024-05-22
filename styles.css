@@ -500,7 +500,8 @@ body {
     .overlay h1 {
         font-size:35px
     }
-    .aboutContent button {
+    .aboutNavigation button {
+        margin-top:5px;
         margin-bottom: 5px;
     }
 }
