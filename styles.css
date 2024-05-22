@@ -14,7 +14,7 @@ h1 {
     font-style: normal;
     text-align: center;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
       }
       
 h2 {
@@ -28,7 +28,7 @@ h2 {
 .container {
     display: flex;
     justify-content: space-between;
-    margin: 20px auto;
+    margin: 10px auto;
     width: 90%;
     max-width: 1200px;
 }
@@ -193,6 +193,13 @@ input[type="number"] {
     /* text-align: right; Right-align the content inside the container */
 }
 
+/* Right-align input when user types and aesthetic adjustments*/
+.right-align {
+    text-align: right;
+    font-size: 20px;
+
+}
+
 .mortgageItem {
     display: flex;
     flex-wrap: wrap;
@@ -220,6 +227,10 @@ input[type="number"] {
     display: flex;
     flex-wrap: wrap;
     margin: 0;
+}
+.moneyInput{
+    font-size: 20px;
+    
 }
 
 .personItem {
@@ -257,7 +268,7 @@ input[type="number"] {
 #cashTopUp{
     font-style: italic;
     font-weight: lighter;
-    color:#a0dbc6;
+    color:#f7d059;
 }
 
     #mortgageForm, .calculation-results {
@@ -352,19 +363,22 @@ input[type="number"] {
 }
 
 .aboutContent {
-    /* background: rgba(255, 255, 255, 0.431); Semi-translucent white box */
-    padding: 20px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.495); 
+    padding: 30px;
+    font-weight: bolder;
+    font-size: 18px;
     text-align: center;
-    max-width: 1200px;
-    width: 80%;
+    max-width: 100%;
+    width: 100%;
     margin-top: 1px;
+    margin-bottom: 20px;
 }
 /* Button styles */
-.aboutContent button {
+.aboutNavigation button {
     background-color: #78A083;
     border: none;
     color: white;
+    width: 200px;
     padding: 10px 20px;
     margin: 0 10px;
     border-radius: 5px;
@@ -402,18 +416,68 @@ body {
     margin: 0 auto;
 }
 
-/* Footer styles */
-/* .footer {
-    background-color: #344955;
+
+/*STYLES for ASSUMPTIONS PAGE*/
+.assumptionsContainer {
+    text-align:center;
+    padding-left: 20px;
+    padding-right: 40px;
+    margin: 80px;
+}
+/* Button styles */
+.buttonContainer {
+    display: flex;
+    justify-content: center; /* Center the button */
+    align-items: center; /* Center vertically */
+    margin-top: 20px; /* Adjust as needed */
+}
+.buttonContainer button {
+   text-align: center;
+    background-color: #78A083;
+    border: none;
     color: white;
-    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+}
+
+.assumptionsContent button:hover {
+    background-color: #50727B;
+}
+
+.assumptionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.assumptionBox {
+    background-color: #344955;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    font-size: 10px;
-} */
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.assumptionBox h3 {
+    color: #a3c8ad;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.assumptionBox p {
+    font-size: 16px;
+    line-height: 1.5;
+}
 
 @media only screen and (min-width: 601px) {
     .footer {
@@ -439,28 +503,4 @@ body {
     .aboutContent button {
         margin-bottom: 5px;
     }
-}
-
-/*STYLES for ASSUMPTIONS PAGE*/
-.assumptionsContent {
-    text-align:center;
-    padding-left: 20px;
-    padding-right: 40px;
-    margin: 80px;
-}
-/* Button styles */
-.assumptionsContent button {
-    background-color: #78A083;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
-}
-
-.assumptionsContent button:hover {
-    background-color: #50727B;
 }

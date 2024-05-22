@@ -44,35 +44,39 @@
                 <div class="mortgageItem">
                     <div class="mortgageField"><label for="loanPercentage">Loan % of Property Value:</label>
                     </div>
-                    <div class="mortgageField"><input type="number" id="loanPercentage" required><br></div>
+                    <div class="mortgageField"><input type="number" id="loanPercentage" class="right-align" min="0" max="100" value="80" required><br></div>
                 </div>
+                <div id="errorBelow0" style="font-size: 10px; display: none; color: rgb(255, 106, 106);">Value
+                    must be more than 0.</div>
+                <div id="errorAbove100" style="font-size: 10px; display: none; color: rgb(255, 106, 106);">Value
+                        must be 100 or below.</div>
                 <div class="mortgageItem">
-
                     <div class="mortgageField"><label for="interestRate">Mortgage Interest Rate (%):</label></div>
-                    <div class="mortgageField"><input type="number" id="interestRate" step="0.01" required><br></div>
+                    <div class="mortgageField"><input type="number" id="interestRate" step="0.01" class="right-align" value="2.6" required><br></div>
                 </div>
 
                 <div class="mortgageItem">
 
                     <div class="mortgageField"><label for="loanTenure">Loan Tenure (years):</label></div>
-                    <div class="mortgageField"><input type="number" id="loanTenure" required><br></div>
+                    <div class="mortgageField"><input type="number" id="loanTenure" class="right-align" value="25"required><br></div>
                 </div>
             </div>
             <!-- <hr class="horizontal-line"> -->
             <div class="personContainer">
                 <div class="personItem"><label for="personAIncome">Person A Monthly Income ($):</label>
-                    <input type="number" id="personAIncome" required><br>
+                    <input type="number" id="personAIncome" class="moneyInput" required><br>
                 </div>
                 <div class="personItem"><label for="personBIncome">Person B Monthly Income ($):</label>
-                    <input type="number" id="personBIncome" required><br>
+                    <input type="number" id="personBIncome" class="moneyInput"  required><br>
                 </div>
 
             </div>
             <div class="personContainer">
-                <div class="personItem"><label for="personAOABalance">Person A Current OA Balance ($):</label><input type="number" id="personAOABalance" required><br></div>
+                <div class="personItem"><label for="personAOABalance">Person A Current OA Balance ($):</label>
+                    <input type="number" id="personAOABalance" class="moneyInput" required><br></div>
             
                 <div class="personItem"><label for="personBOABalance">Person B Current OA Balance ($):</label>
-                <input type="number" id="personBOABalance" required><br></div>
+                <input type="number" id="personBOABalance" class="moneyInput" required><br></div>
             </div>
             
             <div  class= "buttonContainer">
@@ -88,6 +92,8 @@
                 <span id="cpfForDownpayment">$0</span></p>
             <p>Cash Required for Downpayment: </br>
                 <span id="cashForDownpayment">$0</span></p>
+            <p>Monthly total CPF OA contribution: </br>
+                <span id ="totalMonthlyCPFContribution">$0</span></p>
             <p>Monthly Repayment Amount: </br>
                 <span id="monthlyRepayment">$0</span></p>
             <p id="cashTopUp"></p>

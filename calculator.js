@@ -43,6 +43,7 @@ function calculate() {
     document.getElementById('cpfForDownpayment').innerText = "$" + cpfForDownpayment.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     document.getElementById('cashForDownpayment').innerText = "$" + cashForDownpayment.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     document.getElementById('cashTopUp').innerText = (cashTopUpNeeded > 0) ? `Needs cash top up of $${cashTopUpNeeded.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} monthly` : 'Monthly payment is fully covered by CPF contribution';
+    document.getElementById('totalMonthlyCPFContribution').innerText = "$" + totalMonthlyCPFContribution.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     document.getElementById('remainingCashFlow').innerText = "$" + remainingCashFlow.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
@@ -51,4 +52,27 @@ function calculateMonthlyRepayment(interestRate, loanAmount, loanTenure) {
     const totalPayments = loanTenure * 12;
     const monthlyRepayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -totalPayments));
     return monthlyRepayment;
+}
+
+// data validation for input fields
+var prevLoanPercentage;
+document.getElementById("loanPercentage").addEventListener("input", function(event) {
+    var input = event.target;
+    var value = parseFloat(input.value);
+    input.value = validatePercentage(input.value)
+    if (value > 100) {
+        input.value = prevLoanPercentage; // Limit the value to 100
+        errorAbove100.style.display = "flex";
+    } 
+    else {
+        errorAbove100.style.display = "none";
+    }
+    prevLoanPercentage = input.value;
+});
+function validatePercentage(input) {
+    if (input < 0) {
+        return 0
+    } else if (input > 100) {
+        return 100
+    } else return input
 }
