@@ -13,7 +13,7 @@ h1 {
     font-size: 70px;
     font-style: normal;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 10px;
       }
       
@@ -280,7 +280,7 @@ input[type="number"] {
         background-color: #344955;
         color: white;
         text-align: center;
-        padding: 20px;
+        padding: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         width: 100%;
         position: block;
@@ -429,7 +429,7 @@ body {
     display: flex;
     justify-content: center; /* Center the button */
     align-items: center; /* Center vertically */
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 15px; /* Adjust as needed */
 }
 .buttonContainer button {
    text-align: center;
