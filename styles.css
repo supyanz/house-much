@@ -422,23 +422,27 @@ body {
     text-align:center;
     padding-left: 20px;
     padding-right: 40px;
-    margin: 80px;
+    margin: 60px;
 }
 /* Button styles */
 .buttonContainer {
     display: flex;
     justify-content: center; /* Center the button */
     align-items: center; /* Center vertically */
-    margin-top: 15px; /* Adjust as needed */
+    margin-top: 5px; /* Adjust as needed */
 }
 .buttonContainer button {
    text-align: center;
     background-color: #78A083;
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 0;
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
 }
@@ -466,6 +470,7 @@ body {
     width: calc(33.33% - 20px);
     box-sizing: border-box;
     text-align: left;
+    margin-bottom: 2px;
 }
 
 .assumptionBox h3 {
@@ -484,7 +489,7 @@ body {
         background-color: #344955;
         color: white;
         text-align: center;
-        padding: 20px;
+        padding: 12px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         width: 100%;
         position: absolute;
