@@ -423,18 +423,6 @@ input[type="number"] {
     margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 900px) {
-    .aboutContent {
-        font-size: 16px; /* Smaller font size for medium screens */
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .aboutContent {
-        font-size: 14px; /* Smaller font size for small screens */
-    }
-}
-
 /* Button styles */
 .aboutNavigation button {
     background-color: #78A083;
@@ -486,6 +474,7 @@ body {
     padding-right: 40px;
     margin: 60px 20px 20px;
     padding-top: 80px;
+    
 }
 /* Button styles */
 .buttonContainer {
@@ -522,6 +511,7 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    overflow: auto;
 }
 
 .assumptionBox {
@@ -534,6 +524,7 @@ body {
     box-sizing: border-box;
     text-align: left;
     margin-bottom: 2px;
+    overflow: hidden;
 }
 
 .assumptionBox h3 {
@@ -545,6 +536,13 @@ body {
 .assumptionBox p {
     font-size: 16px;
     line-height: 1.5;
+}
+
+html, body {
+    height: 100%;
+    overflow: auto; /* Ensure scrollability */
+    margin: 0;
+    padding: 0;
 }
 
 @media only screen and (min-width: 601px) {
@@ -572,8 +570,28 @@ body {
         margin-top:5px;
         margin-bottom: 5px;
     }
-    /* .assumptionBox {
-        font-size: 10px;
-        padding: 2px;
-    } */
+    .aboutContent {
+        font-size: 14px; /* Smaller font size for small screens */
+    }
+    .assumptionBox h3 {
+        font-size: 16px;
+    }
+    .assumptionBox p {
+        font-size: 14px;
+    }
+    .overlay h1 {
+        font-size: 30px
+    }
+    .assumptionsContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .assumptionBox {
+        width: 100%; /* Full width on small screens */
+        margin-bottom: 20px;
+    }
+    .footer {
+        position: relative; /* Ensure the footer does not overlap */
+    }
+}
 }
