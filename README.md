@@ -1,25 +1,42 @@
 # house-much
-interestRate: Mortgage interest rate
-loanAmount: Amount of loan taken up in $
-loanPercentage: % of property value to loan
-loanTenure: Loan tenure in years
-personAIncome: Person A monthly income ($)
-personBIncome: Person B monthly income ($)
-personAOABalance: Person A current OA account balance ($)
-personBOABalance: Person B current OA account balance ($)
-oaContributionCeiling: OA contribution ceiling amount ($)
-oaContributionRate: Total OA contribution rate
-oaBalanceFloor: Minimum balance for OA account ($)
-employeeContributionRate: Employee contribution rate (EE contribution)
-personAUsableOA: Person A usable OA amount
-personBUsableOA: Person B usable OA amount
-personAMonthlyContribution: Person A's monthly CPF OA contribution
-personBMonthlyContribution: Person B's monthly CPF OA contribution
-personATakeHomePay: Person A's take-home pay
-personBTakeHomePay: Person B's take-home pay
-monthlyRepayment: Monthly repayment amount
-downPayment: Downpayment required
-cpfForDownPayment: CPF to be used for downpayment
-cashForDownPayment: Cash required for downpayment
-cashTopUp: If cash top-up is needed and the amount
-calculatorOutput: Output of the calculator function, containing various calculated values.
+
+## Description
+Huey Yan's project to build a webapp that contains a calculator for homebuyers looking for a quick and trusty cash flow calculator.
+
+## Installation
+1. Clone the repo
+    ```sh
+    git clone https://github.com/your-username/your-repo.git
+    ```
+2. Install dependencies
+    ```sh
+    npm install
+    ```
+3. Run the project
+    ```sh
+    npm start
+    ```
+
+## Usage
+To use the project, open the application and follow the on-screen instructions.
+
+## Features
+- Calculator
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+
+
+## License
+This website is created for learning purposes only. The information provided here should not be considered professional advice. Please note that we make no guarantees regarding the accuracy, completeness, or reliability of the contents of this website. Any actions you take based on the contents of this website are at your own risk. We are not liable for any losses or damages incurred from the use of this website.
+        </p>
+
+## Contact
+Your Name - [hueyyan.yan@gmail.com](mailto:hueyyan.yan@gmail.com)
+
+Project Link: [https://github.com/supyanz/house-much](https://github.com/supyanz/housemuch)
+
+## Acknowledgements
+- [OpenAI](https://www.openai.com)
