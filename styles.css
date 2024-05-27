@@ -48,6 +48,55 @@ h2 {
     margin-bottom: 10px;
 }
 
+.info-icon {
+    display: inline-block;
+    background-color: #78A083;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    margin-left: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.info-icon:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 3;
+    bottom: 125%; /* Position the tooltip above the icon */
+    left: 50%;
+    margin-left: -100px; /* Use half of the width to center align */
+    transition: opacity 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow at the bottom */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
 #mortgageForm input[type="number"] {
     width: calc(100% - 20px);
     padding: 10px;
@@ -429,7 +478,7 @@ body {
     display: flex;
     justify-content: center; /* Center the button */
     align-items: center; /* Center vertically */
-    margin-top: 5px; /* Adjust as needed */
+    margin-top: 2px; /* Adjust as needed */
 }
 .buttonContainer button {
    text-align: center;
@@ -464,7 +513,7 @@ body {
 .assumptionBox {
     background-color: #344955;
     color: #ffffff;
-    padding: 20px;
+    padding: 8px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: calc(33.33% - 20px);
@@ -509,4 +558,8 @@ body {
         margin-top:5px;
         margin-bottom: 5px;
     }
+    /* .assumptionBox {
+        font-size: 10px;
+        padding: 2px;
+    } */
 }

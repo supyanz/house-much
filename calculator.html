@@ -42,7 +42,10 @@
             </div>
             <div class="mortgageContainer">
                 <div class="mortgageItem">
-                    <div class="mortgageField"><label for="loanPercentage">Loan % of Property Value:</label>
+                    <div class="mortgageField"><label for="loanPercentage">Loan % of Property Value:
+                        <span class="info-icon">i
+                        <span class="tooltip-text">This is typically 80% if you are taking a HDB loan. Please note the Loan To Value limits if buying older property or taking bank loans.</span>
+                    </span></label>
                     </div>
                     <div class="mortgageField"><input type="number" id="loanPercentage" class="right-align" min="0" max="100" value="80" required><br></div>
                 </div>
@@ -51,23 +54,29 @@
                 <div id="errorAbove100" style="font-size: 10px; display: none; color: rgb(255, 106, 106);">Value
                         must be 100 or below.</div>
                 <div class="mortgageItem">
-                    <div class="mortgageField"><label for="interestRate">Mortgage Interest Rate (%):</label></div>
+                    <div class="mortgageField"><label for="interestRate">Mortgage Interest Rate (%):
+                        <span class="info-icon">i
+                            <span class="tooltip-text">The current interest rate for HDB loans is 2.6%. Please edit this field if you are taking a bank loan.</span>
+                        </span>
+                    </label></div>
                     <div class="mortgageField"><input type="number" id="interestRate" step="0.01" class="right-align" value="2.6" required><br></div>
                 </div>
 
                 <div class="mortgageItem">
-
-                    <div class="mortgageField"><label for="loanTenure">Loan Tenure (years):</label></div>
+                    <div class="mortgageField"><label for="loanTenure">Loan Tenure (years): 
+                        <span class="info-icon">i
+                        <span class="tooltip-text">This is typically 25 years, but you may opt for a shorter loan tenure. Please edit accordingly.</span>
+                    </span></label></div>
                     <div class="mortgageField"><input type="number" id="loanTenure" class="right-align" value="25"required><br></div>
                 </div>
             </div>
             <!-- <hr class="horizontal-line"> -->
             <div class="personContainer">
                 <div class="personItem"><label for="personAIncome">Person A Monthly Income ($):</label>
-                    <input type="number" id="personAIncome" class="moneyInput" required><br>
+                    <input type="number" id="personAIncome" class="moneyInput" required title="Please fill in full salary (including CPF)"required><br>
                 </div>
                 <div class="personItem"><label for="personBIncome">Person B Monthly Income ($):</label>
-                    <input type="number" id="personBIncome" class="moneyInput"  required><br>
+                    <input type="number" id="personBIncome" class="moneyInput" required title="Please fill in full salary (including CPF)" required><br>
                 </div>
 
             </div>
