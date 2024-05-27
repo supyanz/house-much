@@ -9,7 +9,7 @@ function calculate() {
     const personAOABalance = parseFloat(document.getElementById('personAOABalance').value);
     const personBOABalance = parseFloat(document.getElementById('personBOABalance').value);
 
-    // Constants
+    // Constants (needed for calculations)
     const ceiling = 6800;
     const eeContributionRate = 0.17;
     const oaContributionRate = 0.23;
@@ -18,8 +18,10 @@ function calculate() {
     // Interim calculations
     const personAUsableOA = Math.max(0, personAOABalance - oaBalanceFloor);
     const personBUsableOA = Math.max(0, personBOABalance - oaBalanceFloor);
+    // These are calculated based on employee and employer contribution (together at 23%)
     const personAMonthlyCPFContribution = Math.min(ceiling, personAIncome) * oaContributionRate;
     const personBMonthlyCPFContribution = Math.min(ceiling, personBIncome) * oaContributionRate;
+    // These are calculated as Income less employee contribution (of 17%), taking into account contribution cap.
     const personATakeHomePay = (personAIncome <= ceiling) ? 
         personAIncome - (eeContributionRate * personAIncome) : 
         personAIncome - (eeContributionRate * ceiling);
@@ -38,6 +40,7 @@ function calculate() {
     const remainingCashFlow = personATakeHomePay + personBTakeHomePay - cashTopUpNeeded;
 
     // Output
+    //The toLocaleString is what I used to display the numbers with commas for thousands.
     document.getElementById('monthlyRepayment').innerText = "$" + monthlyRepayment.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     document.getElementById('downpayment').innerText = "$" + downpayment.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     document.getElementById('cpfForDownpayment').innerText = "$" + cpfForDownpayment.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -69,6 +72,7 @@ document.getElementById("loanPercentage").addEventListener("input", function(eve
     }
     prevLoanPercentage = input.value;
 });
+
 function validatePercentage(input) {
     if (input < 0) {
         return 0
